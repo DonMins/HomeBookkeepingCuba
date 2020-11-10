@@ -1,0 +1,6 @@
+alter table HOMEBOOKKEEPINGCUBA_EXPENSES alter column NAMECATEGORY rename to NAMECATEGORY__U88376 ^
+alter table HOMEBOOKKEEPINGCUBA_EXPENSES alter column NAMECATEGORY__U88376 set null ;
+-- alter table HOMEBOOKKEEPINGCUBA_EXPENSES add column NAME_CATEGORY_ID integer ^
+-- update HOMEBOOKKEEPINGCUBA_EXPENSES set NAME_CATEGORY_ID = <default_value> ;
+-- alter table HOMEBOOKKEEPINGCUBA_EXPENSES alter column NAME_CATEGORY_ID set not null ;
+alter table HOMEBOOKKEEPINGCUBA_EXPENSES add column NAME_CATEGORY_ID integer not null ;

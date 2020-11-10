@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://expensesEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.home.bookkeeping.web.screens.expenses">
+    <data>
+        <instance id="expensesDc"
+                  class="com.company.home.bookkeeping.entity.Expenses">
+            <view extends="_local">
+                <property name="nameCategory" view="_minimal">
+                    <property name="nameCategory"/>
+                </property>
+                <property name="account" view="_minimal">
+                    <property name="cartNum"/>
+                </property>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="expensesDc">
+            <column width="350px">
+                <pickerField id="nameCategoryField" property="nameCategory">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <dateField id="dateField" property="date"/>
+                <pickerField id="accountField" property="account">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <textField id="amountField" property="amount"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://expensesBrowse.caption"
+        focusComponent="expensesesTable"
+        messagesPack="com.company.home.bookkeeping.web.screens.expenses">
+    <data readOnly="true">
+        <collection id="expensesesDc"
+                    class="com.company.home.bookkeeping.entity.Expenses">
+            <view extends="_local">
+                <property name="nameCategory" view="_minimal">
+                    <property name="nameCategory"/>
+                </property>
+                <property name="account" view="_minimal">
+                    <property name="cartNum"/>
+                </property>
+            </view>
+            <loader id="expensesesDl">
+                <query>
+                    <![CDATA[select e from homebookkeepingcuba_Expenses e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="expensesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="expensesesTable"
+                dataLoader="expensesesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="expensesesTable"
+                    width="100%"
+                    dataContainer="expensesesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="nameCategory"/>
+                <column id="date"/>
+                <column id="account"/>
+                <column id="amount"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="expensesesTable.create"/>
+                <button id="editBtn" action="expensesesTable.edit"/>
+                <button id="removeBtn" action="expensesesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,1 @@
+alter table HOMEBOOKKEEPINGCUBA_EXPENSES drop column NAMECATEGORY__U88376 cascade ;

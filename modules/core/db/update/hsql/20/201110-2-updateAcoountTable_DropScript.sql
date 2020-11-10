@@ -1,0 +1,1 @@
+alter table HOMEBOOKKEEPINGCUBA_ACOOUNT_TABLE drop column DESCRIPTION__U01409 cascade ;

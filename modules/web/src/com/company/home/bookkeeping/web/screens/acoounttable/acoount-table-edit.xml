@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://acoountTableEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.home.bookkeeping.web.screens.acoounttable">
+    <data>
+        <instance id="acoountTableDc"
+                  class="com.company.home.bookkeeping.entity.AcoountTable">
+            <view extends="_local">
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                </property>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="acoountTableDc">
+            <column width="350px">
+                <textField id="balanceField" property="balance"/>
+                <textField id="cartNumField" property="cartNum"/>
+                <textField id="nameField" property="name"/>
+                <textField id="descriptionField" property="description"/>
+                <pickerField id="userField" property="user">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

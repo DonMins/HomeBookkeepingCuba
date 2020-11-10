@@ -1,0 +1,1 @@
+alter table HOMEBOOKKEEPINGCUBA_INCOME drop column NAMECATEGORY__U26302 cascade ;

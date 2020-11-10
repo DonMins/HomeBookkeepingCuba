@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://transferBrowse.caption"
+        focusComponent="transfersTable"
+        messagesPack="com.company.home.bookkeeping.web.screens.transfer">
+    <data readOnly="true">
+        <collection id="transfersDc"
+                    class="com.company.home.bookkeeping.entity.Transfer">
+            <view extends="_local">
+                <property name="accountFrom" view="_minimal">
+                    <property name="cartNum"/>
+                </property>
+                <property name="accounTo" view="_minimal">
+                    <property name="cartNum"/>
+                </property>
+            </view>
+            <loader id="transfersDl">
+                <query>
+                    <![CDATA[select e from homebookkeepingcuba_Transfer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="transfersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="transfersTable"
+                dataLoader="transfersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="transfersTable"
+                    width="100%"
+                    dataContainer="transfersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="amount"/>
+                <column id="date"/>
+                <column id="accountFrom"/>
+                <column id="accounTo"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="transfersTable.create"/>
+                <button id="editBtn" action="transfersTable.edit"/>
+                <button id="removeBtn" action="transfersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

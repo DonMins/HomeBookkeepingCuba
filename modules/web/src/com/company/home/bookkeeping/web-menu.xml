@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-homebookkeepingcuba" insertBefore="administration" caption="mainMsg://menu_config.application-homebookkeepingcuba">
+        <item screen="homebookkeepingcuba_Transfer.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_Transfer.browse"/>
+        <item screen="homebookkeepingcuba_ExpenseCategory.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_ExpenseCategory.browse"/>
+        <item screen="homebookkeepingcuba_AcoountTable.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_AcoountTable.browse"/>
+        <item screen="homebookkeepingcuba_Expenses.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_Expenses.browse"/>
+        <item screen="homebookkeepingcuba_Income.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_Income.browse"/>
+        <item screen="homebookkeepingcuba_IncomeCategoryTable.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_IncomeCategoryTable.browse"/>
+        <item screen="homebookkeepingcuba_Users.browse"
+              caption="mainMsg://menu_config.homebookkeepingcuba_Users.browse"/>
+    </menu>
+</menu-config>

@@ -1,0 +1,2 @@
+-- update HOMEBOOKKEEPINGCUBA_EXPENSE_CATEGORY set NAMECATEGORY = <default_value> where NAMECATEGORY is null ;
+alter table HOMEBOOKKEEPINGCUBA_EXPENSE_CATEGORY alter column NAMECATEGORY set not null ;

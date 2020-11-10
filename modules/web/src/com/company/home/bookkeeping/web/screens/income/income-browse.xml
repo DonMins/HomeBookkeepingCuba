@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://incomeBrowse.caption"
+        focusComponent="incomesTable"
+        messagesPack="com.company.home.bookkeeping.web.screens.income">
+    <data readOnly="true">
+        <collection id="incomesDc"
+                    class="com.company.home.bookkeeping.entity.Income">
+            <view extends="_local">
+                <property name="nameCategory" view="_minimal">
+                    <property name="nameCategory"/>
+                </property>
+                <property name="account" view="_minimal">
+                    <property name="cartNum"/>
+                    <property name="user" view="_minimal">
+                        <property name="login"/>
+                    </property>
+                </property>
+            </view>
+            <loader id="incomesDl">
+                <query>
+                    <![CDATA[select e from homebookkeepingcuba_Income e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="incomesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="incomesTable"
+                dataLoader="incomesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="incomesTable"
+                    width="100%"
+                    dataContainer="incomesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="nameCategory"/>
+                <column id="amount"/>
+                <column id="date"/>
+                <column id="account"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="incomesTable.create"/>
+                <button id="editBtn" action="incomesTable.edit"/>
+                <button id="removeBtn" action="incomesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

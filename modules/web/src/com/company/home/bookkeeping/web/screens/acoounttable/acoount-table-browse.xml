@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://acoountTableBrowse.caption"
+        focusComponent="acoountTablesTable"
+        messagesPack="com.company.home.bookkeeping.web.screens.acoounttable">
+    <data readOnly="true">
+        <collection id="acoountTablesDc"
+                    class="com.company.home.bookkeeping.entity.AcoountTable">
+            <view extends="_local">
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                </property>
+            </view>
+            <loader id="acoountTablesDl">
+                <query>
+                    <![CDATA[select e from homebookkeepingcuba_AcoountTable e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="acoountTablesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="acoountTablesTable"
+                dataLoader="acoountTablesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="acoountTablesTable"
+                    width="100%"
+                    dataContainer="acoountTablesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="balance"/>
+                <column id="cartNum"/>
+                <column id="name"/>
+                <column id="description"/>
+                <column id="user"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="acoountTablesTable.create"/>
+                <button id="editBtn" action="acoountTablesTable.edit"/>
+                <button id="removeBtn" action="acoountTablesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

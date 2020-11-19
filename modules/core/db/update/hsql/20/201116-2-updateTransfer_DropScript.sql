@@ -1,0 +1,2 @@
+alter table HOMEBOOKKEEPINGCUBA_TRANSFER drop column ACCOUNT_FROM_ID__U29218 cascade ;
+alter table HOMEBOOKKEEPINGCUBA_TRANSFER drop column ACCOUN_TO_ID__U34678 cascade ;

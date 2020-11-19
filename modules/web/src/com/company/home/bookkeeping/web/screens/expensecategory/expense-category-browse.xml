@@ -7,7 +7,12 @@
     <data readOnly="true">
         <collection id="expenseCategoriesDc"
                     class="com.company.home.bookkeeping.entity.ExpenseCategory">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                    <property name="password"/>
+                </property>
+            </view>
             <loader id="expenseCategoriesDl">
                 <query>
                     <![CDATA[select e from homebookkeepingcuba_ExpenseCategory e]]>
@@ -34,6 +39,7 @@
             </actions>
             <columns>
                 <column id="nameCategory"/>
+                <column id="user"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

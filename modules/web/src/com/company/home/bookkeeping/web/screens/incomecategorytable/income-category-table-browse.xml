@@ -7,7 +7,11 @@
     <data readOnly="true">
         <collection id="incomeCategoryTablesDc"
                     class="com.company.home.bookkeeping.entity.IncomeCategoryTable">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                </property>
+            </view>
             <loader id="incomeCategoryTablesDl">
                 <query>
                     <![CDATA[select e from homebookkeepingcuba_IncomeCategoryTable e]]>
@@ -34,6 +38,7 @@
             </actions>
             <columns>
                 <column id="nameCategory"/>
+                <column id="user"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

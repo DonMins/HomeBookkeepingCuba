@@ -1,4 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="account_table1" name="acoountTable-view" extends="_local">
+        <property name="user" view="_minimal">
+            <property name="login"/>
+        </property>
+    </view>
+    <view entity="homebookkeepingcuba_Users" name="users-view" extends="_local"/>
+    <view entity="homebookkeepingcuba_IncomeCategoryTable" name="incomeCategoryTable-view" extends="_local">
+        <property name="user" view="_minimal">
+            <property name="login"/>
+            <property name="password"/>
+        </property>
+    </view>
+    <view entity="homebookkeepingcuba_ExpenseCategory" name="expenseCategory-view" extends="_local">
+        <property name="user" view="_minimal">
+            <property name="login"/>
+            <property name="password"/>
+        </property>
+    </view>
+    <view entity="homebookkeepingcuba_Expenses" name="expenses-view" extends="_local">
+        <property name="nameCategory" view="_minimal">
+            <property name="nameCategory"/>
+        </property>
+        <property name="user" view="_minimal">
+            <property name="login"/>
+            <property name="password"/>
+        </property>
+        <property name="account" view="_minimal">
+            <property name="balance"/>
+            <property name="cartNum"/>
+            <property name="name"/>
+            <property name="description"/>
+        </property>
+    </view>
+    <view entity="homebookkeepingcuba_Income" name="income-view" extends="_local">
+        <property name="nameCategory" view="_minimal">
+            <property name="nameCategory"/>
+        </property>
+        <property name="user" view="_minimal">
+            <property name="login"/>
+            <property name="password"/>
+        </property>
+        <property name="account" view="_minimal">
+            <property name="balance"/>
+            <property name="cartNum"/>
+            <property name="name"/>
+            <property name="description"/>
+        </property>
+    </view>
+    <view entity="homebookkeepingcuba_Transfer" name="transfer-view" extends="_local">
+        <property name="user" view="_minimal">
+            <property name="login"/>
+            <property name="password"/>
+        </property>
+        <property name="accountFrom" view="_minimal">
+            <property name="balance"/>
+            <property name="cartNum"/>
+            <property name="name"/>
+            <property name="description"/>
+        </property>
+        <property name="accounTo" view="_minimal">
+            <property name="balance"/>
+            <property name="cartNum"/>
+            <property name="name"/>
+            <property name="description"/>
+        </property>
+    </view>
 </views>

@@ -16,6 +16,10 @@ public class Expenses extends BaseIntegerIdEntity {
     @NotNull
     private ExpenseCategory nameCategory;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private Users user;
+
     @Temporal(TemporalType.TIMESTAMP)
     @NotNull
     @Column(name = "date", nullable = false)
@@ -28,6 +32,14 @@ public class Expenses extends BaseIntegerIdEntity {
     @NotNull
     @Column(name = "amount", nullable = false)
     private Double amount;
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 
     public void setNameCategory(ExpenseCategory nameCategory) {
         this.nameCategory = nameCategory;

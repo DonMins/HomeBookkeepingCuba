@@ -8,11 +8,21 @@
         <collection id="transfersDc"
                     class="com.company.home.bookkeeping.entity.Transfer">
             <view extends="_local">
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                    <property name="password"/>
+                </property>
                 <property name="accountFrom" view="_minimal">
+                    <property name="balance"/>
                     <property name="cartNum"/>
+                    <property name="name"/>
+                    <property name="description"/>
                 </property>
                 <property name="accounTo" view="_minimal">
+                    <property name="balance"/>
                     <property name="cartNum"/>
+                    <property name="name"/>
+                    <property name="description"/>
                 </property>
             </view>
             <loader id="transfersDl">
@@ -41,6 +51,7 @@
             </actions>
             <columns>
                 <column id="amount"/>
+                <column id="user"/>
                 <column id="date"/>
                 <column id="accountFrom"/>
                 <column id="accounTo"/>

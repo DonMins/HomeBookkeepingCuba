@@ -1,0 +1,1 @@
+alter table HOMEBOOKKEEPINGCUBA_TRANSFER add constraint FK_HOMEBOOKKEEPINGCUBA_TRANSFER_ON_ACCOUNT_FROM foreign key (ACCOUNT_FROM_ID) references account_table1(ID);

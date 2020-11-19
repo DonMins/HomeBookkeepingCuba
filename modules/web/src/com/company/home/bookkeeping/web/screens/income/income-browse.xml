@@ -11,11 +11,15 @@
                 <property name="nameCategory" view="_minimal">
                     <property name="nameCategory"/>
                 </property>
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                    <property name="password"/>
+                </property>
                 <property name="account" view="_minimal">
+                    <property name="balance"/>
                     <property name="cartNum"/>
-                    <property name="user" view="_minimal">
-                        <property name="login"/>
-                    </property>
+                    <property name="name"/>
+                    <property name="description"/>
                 </property>
             </view>
             <loader id="incomesDl">
@@ -44,6 +48,7 @@
             </actions>
             <columns>
                 <column id="nameCategory"/>
+                <column id="user"/>
                 <column id="amount"/>
                 <column id="date"/>
                 <column id="account"/>

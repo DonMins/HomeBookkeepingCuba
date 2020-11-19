@@ -1,0 +1,1 @@
+alter table HOMEBOOKKEEPINGCUBA_EXPENSE_CATEGORY add column USER_ID integer ;

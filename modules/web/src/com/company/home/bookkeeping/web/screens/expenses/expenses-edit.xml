@@ -10,8 +10,15 @@
                 <property name="nameCategory" view="_minimal">
                     <property name="nameCategory"/>
                 </property>
+                <property name="user" view="_minimal">
+                    <property name="login"/>
+                    <property name="password"/>
+                </property>
                 <property name="account" view="_minimal">
+                    <property name="balance"/>
                     <property name="cartNum"/>
+                    <property name="name"/>
+                    <property name="description"/>
                 </property>
             </view>
             <loader/>
@@ -23,6 +30,12 @@
         <form id="form" dataContainer="expensesDc">
             <column width="350px">
                 <pickerField id="nameCategoryField" property="nameCategory">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="userField" property="user">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>
                         <action id="clear" type="picker_clear"/>

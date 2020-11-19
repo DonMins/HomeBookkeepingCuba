@@ -14,7 +14,7 @@
             </view>
             <loader id="acoountTablesDl">
                 <query>
-                    <![CDATA[select e from homebookkeepingcuba_AcoountTable e]]>
+                    <![CDATA[select e from account_table1 e]]>
                 </query>
             </loader>
         </collection>

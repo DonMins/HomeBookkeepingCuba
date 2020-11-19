@@ -5,8 +5,8 @@ import com.haulmont.cuba.core.entity.BaseIntegerIdEntity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "HOMEBOOKKEEPINGCUBA_ACOOUNT_TABLE")
-@Entity(name = "homebookkeepingcuba_AcoountTable")
+@Table(name = "account_table1")
+@Entity(name = "account_table1")
 public class AcoountTable extends BaseIntegerIdEntity {
     private static final long serialVersionUID = 5060754192916703613L;
 

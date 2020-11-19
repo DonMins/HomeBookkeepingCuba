@@ -5,8 +5,8 @@
               caption="mainMsg://menu_config.homebookkeepingcuba_Transfer.browse"/>
         <item screen="homebookkeepingcuba_ExpenseCategory.browse"
               caption="mainMsg://menu_config.homebookkeepingcuba_ExpenseCategory.browse"/>
-        <item screen="homebookkeepingcuba_AcoountTable.browse"
-              caption="mainMsg://menu_config.homebookkeepingcuba_AcoountTable.browse"/>
+        <item screen="account_table1.browse"
+              caption="mainMsg://menu_config.account_table1.browse"/>
         <item screen="homebookkeepingcuba_Expenses.browse"
               caption="mainMsg://menu_config.homebookkeepingcuba_Expenses.browse"/>
         <item screen="homebookkeepingcuba_Income.browse"

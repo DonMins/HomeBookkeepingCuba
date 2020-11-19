@@ -15,6 +15,10 @@ public class Income extends BaseIntegerIdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private IncomeCategoryTable nameCategory;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private Users user;
+
     @NotNull
     @Column(name = "amount", nullable = false)
     private Double amount;
@@ -27,6 +31,14 @@ public class Income extends BaseIntegerIdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account")
     private AcoountTable account;
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 
     public void setNameCategory(IncomeCategoryTable nameCategory) {
         this.nameCategory = nameCategory;
